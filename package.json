@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "node-red-flow-json-division",
   "bin": {
-    "nrjsondiv": "nrjsondiv.js"
+    "flowjsondiv": "flowjsondiv.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
