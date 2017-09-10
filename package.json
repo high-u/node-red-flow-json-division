@@ -1,6 +1,6 @@
 {
   "name": "node-red-flow-json-division",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "node-red-flow-json-division",
   "bin": {
     "flowjsondiv": "flowjsondiv.js"
