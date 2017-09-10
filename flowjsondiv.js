@@ -11,7 +11,7 @@ var clip = require("node-clip")();
 // get parameter
 var param1 = process.argv[2]; // `-c` or `-f` or `output path` or undefined
 var param2 = process.argv[3]; // `input path (-f)` or `output path (-c)` or undefined
-var param3 = process.argv[4]; // output-path or undefined
+//var param3 = process.argv[4]; // output-path or undefined
 
 var specialKeys = { func: ".js", x: ".txt", y: ".txt", template: ".txt" };
 
@@ -58,18 +58,18 @@ var divisioner = function (json, outputname, outputdir) {
         }
     });
 };
+console.log(param2);
 
-if (param1 == "-c") {
-    var outputfilename = param2;
-    var outputdirpath = param3;
+if (param2 == undefined) {
+    //var outputfilename = param2;
+    //var outputdirpath = param3;
+    var outputdirpath = param1;
     // no check
     
     console.log("clipboard");
     clip.read("general", function (err, value) {
         console.log(value);
-        divisioner(value, outputfilename, outputdirpath);
+        divisioner(value, "flow.json", outputdirpath);
     });
-} else if (param1 == "-f") {
-    // get file
 }
 return;

@@ -8,7 +8,7 @@
 ## Description
 
 ```
-flowjsondiv -c [Output filename] [Output directory]
+flowjsondiv [Output directory]
 ```
 
 ## Install (As a command)
@@ -30,7 +30,7 @@ npm install -g node-red-flow-json-division
 ## Usage (As a command)
 
 ```
-flowjsondiv -c flow.json ${HOME}/node-red/flow
+flowjsondiv ${HOME}/node-red/flow
 ```
 
 ## Usage (No Install)
@@ -40,7 +40,7 @@ flowjsondiv -c flow.json ${HOME}/node-red/flow
 ```
 git clone https://github.com/high-u/node-red-flow-json-division.git
 cd node-red-flow-json-division
-./flowjsondiv -c flow.json ${HOME}/node-red/flow
+./flowjsondiv ${HOME}/node-red/flow
 ```
 
 ## Result
