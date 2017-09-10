@@ -33,6 +33,14 @@ cd node-red-flow-json-division
 ./flowjsondiv -c flow.json ${HOME}/node-red/flow
 ```
 
+## Result
+
+- Flow
+  - ![flow](./screenshots/flow.png)
+
+- Directory
+  - ![directory](./screenshots/result.png)
+
 ## OS Support (Plan for the future)
 
 * Mac
