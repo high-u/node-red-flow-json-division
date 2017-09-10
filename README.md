@@ -13,10 +13,18 @@ flowjsondiv -c [Output filename] [Output directory]
 
 ## Install (As a command)
 
+* from github
+
 ```
 git clone https://github.com/high-u/node-red-flow-json-division.git
 cd node-red-flow-json-division
 sudo npm install -g
+```
+
+* from npm
+
+```
+sudo npm install -g node-red-flow-json-division
 ```
 
 ## Usage (As a command)
@@ -26,6 +34,8 @@ flowjsondiv -c flow.json ${HOME}/node-red/flow
 ```
 
 ## Usage (No Install)
+
+* from github
 
 ```
 git clone https://github.com/high-u/node-red-flow-json-division.git
