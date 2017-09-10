@@ -30,7 +30,7 @@ var divisioner = function (json, outputname, outputdir) {
                 this[key] = "";
             }
         }, noderedNode);
-        arrObj.push({ id: noderedNode.id, type: noderedNode.type, key: "id", value: JSON.stringify(noderedNode, null, "  "), ext: ".json" });
+        arrObj.push({ id: noderedNode.id, type: noderedNode.type, key: "_n", value: JSON.stringify(noderedNode, null, "  "), ext: ".json" });
     });
     // save
     mkdirp(outputdir, function (err) {
