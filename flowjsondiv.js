@@ -30,7 +30,7 @@ var divisioner = function (json, outputname, outputdir) {
                 this[key] = "";
             }
         }, noderedNode);
-        arrObj.push({ id: noderedNode.id, type: noderedNode.type, key: "_n", value: JSON.stringify(noderedNode, null, "  "), ext: ".json" });
+        arrObj.push({ id: noderedNode.id, type: noderedNode.type, key: "_node", value: JSON.stringify(noderedNode, null, "  "), ext: ".json" });
     });
     // save
     mkdirp(outputdir, function (err) {
@@ -45,7 +45,7 @@ var divisioner = function (json, outputname, outputdir) {
             arrObj.forEach(function (obj) {
                 var filedir = outputdir + "/nodes/" + obj.type + "-" + obj.id;
                 if (obj.key === "x" || obj.key === "y") {
-                    filedir = outputdir + "/nodes/position/" + obj.type + "-" + obj.id;
+                    filedir = outputdir + "/nodes/_position/" + obj.type + "-" + obj.id;
                 }
                 mkdirp(filedir, function (err) {
                     fs.writeFile(filedir + "/" + obj.key + obj.ext, obj.value, function (err) {
