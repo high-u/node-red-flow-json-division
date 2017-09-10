@@ -1,0 +1,30 @@
+{
+  "name": "node-red-flow-json-division",
+  "version": "0.0.2",
+  "description": "node-red-flow-json-division",
+  "bin": {
+    "nrjsondiv": "nrjsondiv.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/high-u/node-red-flow-json-division.git"
+  },
+  "keywords": [
+    "node-red",
+    "flow",
+    "json"
+  ],
+  "author": "high-u",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/high-u/node-red-flow-json-division/issues"
+  },
+  "homepage": "https://github.com/high-u/node-red-flow-json-division#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "node-clip": "^0.1.1"
+  }
+}
