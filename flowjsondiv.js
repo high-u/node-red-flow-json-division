@@ -13,7 +13,7 @@ var param1 = process.argv[2]; // `-c` or `-f` or `output path` or undefined
 var param2 = process.argv[3]; // `input path (-f)` or `output path (-c)` or undefined
 var param3 = process.argv[4]; // output-path or undefined
 
-var specialKeys = { func: ".js", x: ".txt", y: ".txt" };
+var specialKeys = { func: ".js", x: ".txt", y: ".txt", template: ".txt" };
 
 var arrObj = [];
 
