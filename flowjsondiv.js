@@ -31,30 +31,11 @@ var divisioner = function (json, outputname, outputdir) {
             if (specialKeys.hasOwnProperty(key) ) {
                 arrObj.push({ id: this.id, type: this.type, key: key, value: this[key], ext: specialKeys[key] });
                 this[key] = "";
-            } else if (key === "x" || key === "y") {
-                this[key] = "";
             }
         }, noderedNode);
         
         arrObj.push({ id: noderedNode.id, type: noderedNode.type, key: "_node", value: JSON.stringify(noderedNode, null, "  "), ext: ".json" });
     });
-    
-    //console.log(JSON.stringify(posijson));
-    // position(y) sort 
-    posijson.sort(function (a, b) {
-        if (a.y < b.y) return -1;
-        if (a.y > b.y) return 1;
-        return 0;
-    });
-    //console.log(JSON.stringify(posijson));
-    var posijsonText = "[";
-    var arrspliter = "";
-    posijson.forEach(function (item) { 
-        posijsonText += arrspliter + "\n  " + JSON.stringify(item);
-        arrspliter = ",";
-    });
-    posijsonText += "\n]"
-    //console.log(posijsonText);
 
     // save
     mkdirp(outputdir + "/nodes", function (err) {
@@ -66,16 +47,8 @@ var divisioner = function (json, outputname, outputdir) {
                     console.log(err);
                 }
             });
-            fs.writeFile(outputdir + "/nodes/_positions.json", posijsonText, function (err) {
-                if (err) {
-                    console.log(err);
-                }
-            });
             arrObj.forEach(function (obj) {
                 var filedir = outputdir + "/nodes/" + obj.type + "-" + obj.id;
-                //if (obj.key === "x" || obj.key === "y") {
-                //    filedir = outputdir + "/nodes/_position/" + obj.type + "-" + obj.id;
-                //}
                 mkdirp(filedir, function (err) {
                     fs.writeFile(filedir + "/" + obj.key + obj.ext, obj.value, function (err) {
                         if (err) {
