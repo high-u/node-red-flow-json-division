@@ -2,18 +2,15 @@
 
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var clip = require("node-clip")();
 var ncp = require("copy-paste");
-
 
 // command parameter libraries
 // https://www.npmjs.com/package/commander
 // https://www.npmjs.com/package/optimist
 
 // get parameter
-var param1 = process.argv[2]; // `-c` or `-f` or `output path` or undefined
-var param2 = process.argv[3]; // `input path (-f)` or `output path (-c)` or undefined
-//var param3 = process.argv[4]; // output-path or undefined
+var param1 = process.argv[2]; // `check` or `output path`
+var param2 = process.argv[3]; // `input file path`
 
 //var specialKeys = { func: ".js", x: ".txt", y: ".txt", template: ".txt" };
 var specialKeys = { func: ".js", template: ".txt" };
@@ -62,29 +59,13 @@ var divisioner = function (json, outputname, outputdir) {
         }
     });
 };
-//console.log(param2);
 
 var clipjson = ncp.paste();
 if (param1 === "check") {
     console.log(clipjson);
     return;
 } else if (param2 == undefined) {
-    
-    console.log(clipjson);
-
-    //var outputfilename = param2;
-    //var outputdirpath = param3;
     var outputdirpath = param1;
-    // no check
-
     divisioner(clipjson, "flow.json", outputdirpath);
-    
-    /*
-    //console.log("clipboard");
-    clip.read("general", function (err, value) {
-        //console.log(value);
-        divisioner(value, "flow.json", outputdirpath);
-    });*/
-
 }
 return;
