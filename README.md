@@ -4,7 +4,7 @@
 
 |Date|Version|Description|
 |:--:|:-----:|:----------|
-|2017-09-17|0.5.2|Supported Windows and add added `check` parameter.|
+|2017-09-17|0.5.3|Supported Windows and add added `check` parameter.|
 
 ## Feature
 
@@ -19,10 +19,16 @@
 
 ## Description
 
-* Output JSON.
+* Output JSON from clipboard.
 
 ```
 flowjsondiv [Output directory]
+```
+
+* Output JSON from clipboard.
+
+```
+flowjsondiv [Output directory] [input file path]
 ```
 
 * Check Clipboard.
@@ -41,17 +47,23 @@ npm install -g node-red-flow-json-division
 
 * Mac
 
-```
+```bash
+# from clipboard.
 flowjsondiv ${HOME}/node-red/flow
-
+# from file.
+flowjsondiv ${HOME}/node-red/flow ${HOME}/flows.json
+# watch the content of the clipboard.
 flowjsondiv check
 ```
 
 * Windows
 
-```
+```bat
+rem from clipboard.
 flowjsondiv %HOMEPATH%¥node-red¥flow
-
+rem from file.
+flowjsondiv %HOMEPATH%¥node-red¥flow %HOMEPATH%¥flow.json
+rem watch the content of the clipboard.
 flowjsondiv check
 ```
 

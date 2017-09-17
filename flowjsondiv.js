@@ -67,5 +67,11 @@ if (param1 === "check") {
 } else if (param2 == undefined) {
     var outputdirpath = param1;
     divisioner(clipjson, "flow.json", outputdirpath);
+} else {
+    var outputdirpath = param1;
+    var inputfile = param2;
+    fs.readFile(inputfile, 'utf8', function (err, textjson) {
+        divisioner(textjson, "flow.json", outputdirpath);
+    });
 }
 return;
