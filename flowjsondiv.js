@@ -3,6 +3,8 @@
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var clip = require("node-clip")();
+var ncp = require("copy-paste");
+
 
 // command parameter libraries
 // https://www.npmjs.com/package/commander
@@ -62,16 +64,27 @@ var divisioner = function (json, outputname, outputdir) {
 };
 //console.log(param2);
 
-if (param2 == undefined) {
+var clipjson = ncp.paste();
+if (param1 === "check") {
+    console.log(clipjson);
+    return;
+} else if (param2 == undefined) {
+    
+    console.log(clipjson);
+
     //var outputfilename = param2;
     //var outputdirpath = param3;
     var outputdirpath = param1;
     // no check
+
+    divisioner(clipjson, "flow.json", outputdirpath);
     
+    /*
     //console.log("clipboard");
     clip.read("general", function (err, value) {
         //console.log(value);
         divisioner(value, "flow.json", outputdirpath);
-    });
+    });*/
+
 }
 return;

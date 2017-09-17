@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/high-u/node-red-flow-json-division#readme",
   "dependencies": {
+    "copy-paste": "^1.3.0",
     "mkdirp": "^0.5.1",
     "node-clip": "^0.1.1"
   }
